@@ -30,12 +30,12 @@ export default function FinancialServicesPage() {
           <p className="mt-5 text-base leading-7 text-[var(--muted)] sm:text-lg sm:leading-8">{financial.lede}</p>
           <p className="mt-4 text-base leading-7 text-[var(--muted)] sm:text-lg sm:leading-8">{financial.body}</p>
         </Reveal>
-        <Reveal delay={90} className="glass rounded-[1.6rem] p-6 sm:p-8">
+        <Reveal delay={90} className="glass card-hover rounded-[1.6rem] p-6 sm:p-8">
           <p className="brand-kicker">Public-facing capabilities</p>
           <ul className="mt-6 list-none space-y-3">
             {financial.capabilities.map((item) => (
               <li key={item} className="flex items-center gap-3 border-b border-[var(--line)] py-3 last:border-0">
-                <span className="h-1.5 w-1.5 rounded-sm bg-[var(--blue)]" />
+                <span className="h-1.5 w-1.5 rounded-sm bg-[var(--accent)]" />
                 <span className="font-medium">{item}</span>
               </li>
             ))}

@@ -42,7 +42,7 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    "mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-[var(--ink)] outline-none transition focus:border-[var(--blue)] focus:shadow-[0_0_0_4px_var(--glow)]";
+    "mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-[var(--ink)] outline-none transition focus:border-[var(--accent)] focus:shadow-[0_0_0_4px_var(--glow)]";
 
   return (
     <form onSubmit={onSubmit} className="menu-panel relative rounded-[1.6rem] p-5 sm:p-8">

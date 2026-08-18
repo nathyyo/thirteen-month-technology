@@ -1,92 +1,84 @@
 import { cn } from "@/lib/cn";
 
+const rayEndpoints: [number, number][] = [
+  [0, -52],
+  [26, -45],
+  [40, -23],
+  [45, 0],
+  [40, 23],
+  [26, 45],
+  [0, 52],
+  [-26, 45],
+  [-40, 23],
+  [-45, 0],
+  [-40, -23],
+  [-26, -45],
+];
+
+// Pagumē: the Ethiopian calendar's short thirteenth month runs five or six
+// days past the twelve. These sit just beyond the ray field, past the arc.
+const pagumeAngles = [-88, -74.5, -61, -47.5, -34];
+
+function polar(radius: number, degrees: number) {
+  const rad = (degrees * Math.PI) / 180;
+  return [radius * Math.cos(rad), radius * Math.sin(rad)] as const;
+}
+
 export function LogoMark({
   className,
   animated = false,
-  uid = "tm",
+  flourish = false,
+  tone = "ink",
 }: {
   className?: string;
   animated?: boolean;
-  uid?: string;
+  flourish?: boolean;
+  tone?: "ink" | "reversed" | "mono";
 }) {
-  const blue = `${uid}-blue`;
-  const silver = `${uid}-silver`;
-  const blueSide = `${uid}-blue-side`;
+  const strokeColor = tone === "mono" ? "currentColor" : tone === "reversed" ? "#F6F1E7" : "#1A1614";
+  const arcColor = tone === "mono" ? "currentColor" : "#C1622D";
 
   return (
     <svg
-      viewBox="40 20 340 250"
+      viewBox="0 0 140 140"
       className={cn("overflow-visible", className)}
       role="img"
       aria-label="Thirteen Month Technology mark"
     >
-      <defs>
-        <linearGradient id={blue} x1="0.2" y1="0" x2="0.75" y2="1">
-          <stop offset="0%" stopColor="#7EC8FF" />
-          <stop offset="38%" stopColor="#20A0F8" />
-          <stop offset="100%" stopColor="#0B5EC4" />
-        </linearGradient>
-        <linearGradient id={blueSide} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#1670D0" />
-          <stop offset="100%" stopColor="#082050" />
-        </linearGradient>
-        <linearGradient id={silver} x1="0.2" y1="0" x2="0.85" y2="1">
-          <stop offset="0%" stopColor="#FFFFFF" />
-          <stop offset="42%" stopColor="#D8DDE4" />
-          <stop offset="100%" stopColor="#8A96A4" />
-        </linearGradient>
-      </defs>
-
-      {/*
-        Italic 1 matching the official mark:
-        flat horizontal top, sharp triangular flag on the top-left,
-        thick slanted stem, flat base. The 3 sits in front on the right.
-      */}
-      <path
-        fill={`url(#${blueSide})`}
-        d="M176 46 L188 56 L140 246 L128 236 Z"
-      />
-      <path
-        fill={`url(#${blue})`}
-        d="M86 46 L176 46 L128 236 L80 236 L114 116 L54 98 Z"
-      />
-
-      <path
-        fill={`url(#${silver})`}
-        d="M176 86 C176 62 200 48 236 48 C278 48 304 70 304 98 C304 120 288 134 256 144 C292 152 316 174 316 206 C316 244 282 266 232 266 C188 266 158 244 154 210 L198 210 C202 228 214 236 234 236 C260 236 274 222 274 204 C274 184 256 174 224 174 L200 174 L200 142 L224 142 C252 142 264 130 264 112 C264 92 248 82 228 82 C206 82 194 92 192 110 Z"
-      />
-
-      {animated ? (
-        <>
-          <path
-            className="swoosh-draw"
-            d="M58 206 C108 246 168 258 228 240 C286 222 332 176 348 118"
-            fill="none"
-            stroke={`url(#${blue})`}
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-          {[
-            [338, 96, 9, "0.85s"],
-            [354, 84, 6, "1s"],
-            [346, 110, 7, "1.1s"],
-            [364, 100, 5, "1.2s"],
-            [328, 78, 5, "1.28s"],
-          ].map(([x, y, size, delay], i) => (
-            <rect
-              key={i}
-              className="pixel-pop"
-              x={Number(x) - Number(size) / 2}
-              y={Number(y) - Number(size) / 2}
-              width={size}
-              height={size}
-              rx="1"
-              fill={`url(#${blue})`}
-              style={{ animationDelay: String(delay) }}
-            />
+      <g transform="translate(70,70)">
+        <g stroke={strokeColor} strokeWidth="4.5" strokeLinecap="round">
+          {rayEndpoints.map(([x, y]) => (
+            <line key={`${x}-${y}`} x1="0" y1="0" x2={x} y2={y} />
           ))}
-        </>
-      ) : null}
+        </g>
+        <circle cx="0" cy="0" r="3.2" fill={strokeColor} />
+        <path
+          className={animated ? "arc-draw" : undefined}
+          d="M 9 -54 A 55 55 0 0 1 40 -38"
+          fill="none"
+          stroke={arcColor}
+          strokeWidth="4.5"
+          strokeLinecap="round"
+        />
+        <circle cx="46" cy="-47" r="5" fill={arcColor} />
+        {flourish
+          ? pagumeAngles.map((deg, i) => {
+              const [x, y] = polar(64, deg);
+              return (
+                <circle
+                  key={deg}
+                  className={animated ? "pagume-dot" : undefined}
+                  cx={x}
+                  cy={y}
+                  r="2.1"
+                  fill={arcColor}
+                  opacity={animated ? undefined : 0.6}
+                  style={animated ? { animationDelay: `${1150 + i * 110}ms` } : undefined}
+                />
+              );
+            })
+          : null}
+      </g>
     </svg>
   );
 }

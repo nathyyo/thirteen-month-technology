@@ -29,7 +29,7 @@ export default function ContactPage() {
           </p>
           <a
             href={`mailto:${site.contact.email}`}
-            className="mt-6 inline-flex text-sm font-semibold text-[var(--blue)]"
+            className="mt-6 inline-flex text-sm font-medium text-[var(--accent)]"
           >
             {site.contact.email}
           </a>

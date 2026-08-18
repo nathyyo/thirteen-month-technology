@@ -28,7 +28,7 @@ export default function GovernmentPage() {
           <ul className="mt-6 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {government.applications.map((item, i) => (
               <li key={item}>
-                <Reveal delay={i * 50} className="glass rounded-2xl px-5 py-6 font-medium">
+                <Reveal delay={i * 50} className="glass card-hover rounded-2xl px-5 py-6 font-medium">
                 {item}
                 </Reveal>
               </li>

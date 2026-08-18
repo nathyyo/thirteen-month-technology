@@ -24,11 +24,11 @@ export default function PartnershipsPage() {
         <p className="brand-kicker">{partnerships.intro}</p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {partnerships.partners.map((item, i) => (
-            <Reveal key={item} delay={i * 70} className="glass rounded-[1.4rem] p-6 sm:rounded-[1.5rem] sm:p-8">
-              <p className="font-display text-[0.7rem] tracking-[0.28em] text-[var(--blue)] uppercase">
+            <Reveal key={item} delay={i * 70} className="glass card-hover rounded-[1.4rem] p-6 sm:rounded-[1.5rem] sm:p-8">
+              <p className="font-display text-[0.7rem] tracking-[0.28em] text-[var(--accent)] uppercase">
                 {String(i + 1).padStart(2, "0")}
               </p>
-              <h2 className="mt-3 text-2xl font-semibold">{item}</h2>
+              <h2 className="font-display mt-3 text-2xl font-semibold">{item}</h2>
             </Reveal>
           ))}
         </div>

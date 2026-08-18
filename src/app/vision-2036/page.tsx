@@ -29,13 +29,13 @@ export default function VisionPage() {
                 delay={i * 80}
                 className={`pl-6 md:pl-0 ${i % 2 === 1 ? "md:col-start-2 md:text-right" : "md:col-start-1"}`}
               >
-                <div className="glass rounded-[1.4rem] p-5 sm:p-6">
-                  <p className="text-sm font-semibold tracking-[0.18em] text-[var(--blue)] uppercase">{item.period}</p>
+                <div className="glass card-hover rounded-[1.4rem] p-5 sm:p-6">
+                  <p className="text-sm font-medium tracking-[0.18em] text-[var(--accent)] uppercase">{item.period}</p>
                   <h2 className="font-display mt-2 text-2xl font-semibold">{item.title}</h2>
                   <p className="mt-3 text-sm leading-6 text-[var(--muted)] sm:mt-4">{item.items.join(" • ")}</p>
                 </div>
               </Reveal>
-              <span className="absolute top-7 left-0 h-2.5 w-2.5 rounded-sm bg-[var(--blue)] md:left-1/2 md:-translate-x-1/2" />
+              <span className="absolute top-7 left-0 h-2.5 w-2.5 rounded-sm bg-[var(--accent)] md:left-1/2 md:-translate-x-1/2" />
             </li>
           ))}
         </ol>

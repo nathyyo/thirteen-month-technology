@@ -30,10 +30,10 @@ export default function SolutionsPage() {
         <div className="container-site grid gap-6 lg:grid-cols-3">
           {audiences.map((item, i) => (
             <Reveal key={item.href} delay={i * 80}>
-                <Link href={item.href} className="group glass block overflow-hidden rounded-[1.5rem]">
+                <Link href={item.href} className="group glass card-hover block overflow-hidden rounded-[1.5rem]">
                   <div className="relative aspect-[16/10]">
                     <CoverImage src={item.image} alt={item.imageAlt} sizes="(min-width:1024px) 33vw, 100vw" />
-                  <div className="absolute inset-0 bg-[#05070c]/25" />
+                  <div className="absolute inset-0 bg-[#1A1614]/25" />
                 </div>
                 <div className="p-6">
                   <p className="brand-kicker">{item.kicker}</p>
@@ -47,19 +47,19 @@ export default function SolutionsPage() {
       </section>
 
       <section className="container-site grid gap-6 section-y lg:grid-cols-2">
-        <Reveal className="glass rounded-[1.6rem] p-6 sm:p-8">
+        <Reveal className="glass card-hover rounded-[1.6rem] p-6 sm:p-8">
           <p className="brand-kicker">Financial Services</p>
           <h2 className="font-display mt-3 text-2xl font-semibold">{financial.title}</h2>
           <p className="mt-4 text-[var(--muted)]">{financial.lede}</p>
-          <Link href="/financial-services" className="mt-6 inline-flex text-sm font-semibold text-[var(--blue)]">
+          <Link href="/financial-services" className="mt-6 inline-flex text-sm font-medium text-[var(--accent)]">
             View financial services →
           </Link>
         </Reveal>
-        <Reveal delay={80} className="glass rounded-[1.6rem] p-6 sm:p-8">
+        <Reveal delay={80} className="glass card-hover rounded-[1.6rem] p-6 sm:p-8">
           <p className="brand-kicker">Technology</p>
           <h2 className="font-display mt-3 text-2xl font-semibold">{technology.title}</h2>
           <p className="mt-4 text-[var(--muted)]">{technology.lede}</p>
-          <Link href="/technology" className="mt-6 inline-flex text-sm font-semibold text-[var(--blue)]">
+          <Link href="/technology" className="mt-6 inline-flex text-sm font-medium text-[var(--accent)]">
             View technology foundation →
           </Link>
         </Reveal>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <title>Thirteen Month mark, monochrome</title>
+  <g transform="translate(70,70)">
+    <g stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-52"/>
+      <line x1="0" y1="0" x2="26" y2="-45"/>
+      <line x1="0" y1="0" x2="40" y2="-23"/>
+      <line x1="0" y1="0" x2="45" y2="0"/>
+      <line x1="0" y1="0" x2="40" y2="23"/>
+      <line x1="0" y1="0" x2="26" y2="45"/>
+      <line x1="0" y1="0" x2="0" y2="52"/>
+      <line x1="0" y1="0" x2="-26" y2="45"/>
+      <line x1="0" y1="0" x2="-40" y2="23"/>
+      <line x1="0" y1="0" x2="-45" y2="0"/>
+      <line x1="0" y1="0" x2="-40" y2="-23"/>
+      <line x1="0" y1="0" x2="-26" y2="-45"/>
+    </g>
+    <circle cx="0" cy="0" r="3.2" fill="currentColor"/>
+    <path d="M 9 -54 A 55 55 0 0 1 40 -38" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="46" cy="-47" r="5" fill="currentColor"/>
+  </g>
+</svg>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LogoMark } from "@/components/logo-mark";
 import { cn } from "@/lib/cn";
 
 export function Wordmark({
@@ -13,29 +14,20 @@ export function Wordmark({
     <Link
       href="/"
       className={cn(
-        "group flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)]",
+        "group flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]",
         className,
       )}
       aria-label="Thirteen Month Technology home"
     >
-      <span className="relative flex h-8 w-[3.35rem] shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#05070c] ring-1 ring-white/10 sm:h-9 sm:w-[3.85rem]">
-        <Image
-          src="/brand/mark-13.png"
-          alt=""
-          width={634}
-          height={390}
-          className="h-full w-full object-contain p-[3px]"
-          sizes="62px"
-          priority={compact}
-        />
-      </span>
+      <LogoMark className="h-8 w-8 shrink-0 sm:h-9 sm:w-9 dark:hidden" tone="ink" />
+      <LogoMark className="hidden h-8 w-8 shrink-0 sm:h-9 sm:w-9 dark:block" tone="reversed" />
       <span className="min-w-0 leading-none">
-        <span className="font-display block truncate text-[0.68rem] font-bold tracking-[0.14em] sm:text-[0.78rem] sm:tracking-[0.16em]">
-          <span className="text-[color:var(--ink)] dark:text-[color:var(--silver-bright)]">THIRTEEN </span>
-          <span className="text-[color:var(--blue)]">MONTH</span>
+        <span className="font-display block truncate text-[1.05rem] tracking-[-0.01em] sm:text-[1.2rem]">
+          <span className="font-bold text-[color:var(--ink)]">13</span>
+          <span className="font-normal text-[color:var(--ink)]"> Month</span>
         </span>
         {!compact && (
-          <span className="mt-1 hidden text-[0.55rem] font-semibold tracking-[0.38em] text-[color:var(--blue)] sm:block">
+          <span className="mt-0.5 hidden text-[0.55rem] font-medium tracking-[0.32em] text-[color:var(--clay-bright)] sm:block">
             TECHNOLOGY
           </span>
         )}

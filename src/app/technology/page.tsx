@@ -23,7 +23,7 @@ export default function TechnologyPage() {
         <p className="brand-kicker">Core capabilities</p>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {technology.capabilities.map((item, i) => (
-            <Reveal key={item.title} delay={i * 60} className="glass rounded-2xl p-5">
+            <Reveal key={item.title} delay={i * 60} className="glass card-hover rounded-2xl p-5">
               <h2 className="font-display text-lg font-semibold">{item.title}</h2>
               <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
             </Reveal>

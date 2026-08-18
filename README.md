@@ -38,10 +38,12 @@ Update navigation, sector copy, capabilities, roadmap, and contact details there
 
 Brand usage, colour, and type rules: [`BRAND.md`](BRAND.md).
 
-Logo files:
+Logo files (vector, see `BRAND.md` for usage rules):
 
-- `public/brand/logo-original.png` — original lockup
-- `public/brand/logo.png` — working copy for the site
+- `public/brand/logo-primary-ink.svg` / `logo-primary-reversed.svg` — horizontal lockup
+- `public/brand/logo-stacked-ink.svg` — vertical/square placements
+- `public/brand/mark-ink.svg` / `mark-reversed.svg` / `mark-mono.svg` — mark only
+- `public/brand/app-icon.svg` — app icon source
 
 ## Environment
 

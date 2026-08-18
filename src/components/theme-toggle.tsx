@@ -10,7 +10,7 @@ export function ThemeToggle() {
       type="button"
       aria-label="Toggle color theme"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] text-[var(--ink)] transition hover:border-[var(--blue)]"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] text-[var(--ink)] transition hover:border-[var(--accent)]"
     >
       <svg viewBox="0 0 24 24" className="hidden h-4 w-4 dark:block" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden>
         <circle cx="12" cy="12" r="4" />

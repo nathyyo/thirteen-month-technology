@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200">
+  <title>13 Month Technology, reversed</title>
+  <g transform="translate(85,100)">
+    <g stroke="#F6F1E7" stroke-width="4.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-52"/>
+      <line x1="0" y1="0" x2="26" y2="-45"/>
+      <line x1="0" y1="0" x2="40" y2="-23"/>
+      <line x1="0" y1="0" x2="45" y2="0"/>
+      <line x1="0" y1="0" x2="40" y2="23"/>
+      <line x1="0" y1="0" x2="26" y2="45"/>
+      <line x1="0" y1="0" x2="0" y2="52"/>
+      <line x1="0" y1="0" x2="-26" y2="45"/>
+      <line x1="0" y1="0" x2="-40" y2="23"/>
+      <line x1="0" y1="0" x2="-45" y2="0"/>
+      <line x1="0" y1="0" x2="-40" y2="-23"/>
+      <line x1="0" y1="0" x2="-26" y2="-45"/>
+    </g>
+    <circle cx="0" cy="0" r="3.2" fill="#F6F1E7"/>
+    <path d="M 9 -54 A 55 55 0 0 1 40 -38" fill="none" stroke="#C1622D" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="46" cy="-47" r="5" fill="#C1622D"/>
+  </g>
+  <text x="185" y="93" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#F6F1E7">13<tspan font-weight="400" font-size="34"> Month</tspan></text>
+  <text x="187" y="122" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="500" letter-spacing="3" fill="#8a8175">TECHNOLOGY</text>
+</svg>

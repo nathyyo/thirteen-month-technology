@@ -32,7 +32,7 @@ export default function PrivacyPage() {
         </p>
         <p>
           For privacy questions, contact{" "}
-          <a className="text-[var(--blue)]" href={`mailto:${site.contact.email}`}>
+          <a className="text-[var(--accent)]" href={`mailto:${site.contact.email}`}>
             {site.contact.email}
           </a>
           .

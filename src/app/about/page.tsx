@@ -52,9 +52,9 @@ export default function AboutPage() {
           <ol className="stack-after list-none space-y-3 sm:space-y-4">
             {approach.map((item, i) => (
               <li key={item.step}>
-                <Reveal delay={i * 50} className="glass grid gap-3 rounded-2xl p-6 md:grid-cols-[7rem_12rem_1fr] md:items-center">
-                <span className="font-display text-sm tracking-[0.22em] text-[var(--blue)]">{item.step}</span>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <Reveal delay={i * 50} className="glass card-hover grid gap-3 rounded-2xl p-6 md:grid-cols-[7rem_12rem_1fr] md:items-center">
+                <span className="font-display text-sm tracking-[0.22em] text-[var(--accent)]">{item.step}</span>
+                <h3 className="font-display text-xl font-semibold">{item.title}</h3>
                 <p className="text-[var(--muted)]">{item.text}</p>
                 </Reveal>
               </li>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </Reveal>
         <div className="stack-after grid gap-4 sm:grid-cols-2">
           {reasons.map((item) => (
-            <Reveal key={item.title} className="glass rounded-2xl p-6">
+            <Reveal key={item.title} className="glass card-hover rounded-2xl p-6">
               <h3 className="font-display text-xl font-semibold">{item.title}</h3>
               <p className="mt-3 text-[var(--muted)]">{item.text}</p>
             </Reveal>

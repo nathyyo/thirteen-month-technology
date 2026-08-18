@@ -39,7 +39,7 @@ export function Header() {
         <Wordmark compact />
 
         <nav className="hidden min-w-0 items-center gap-6 xl:flex" aria-label="Primary">
-          <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--blue)]" href="/about">
+          <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--accent)]" href="/about">
             About
           </Link>
           <div
@@ -49,7 +49,7 @@ export function Header() {
           >
             <button
               type="button"
-              className="inline-flex items-center gap-1 text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--blue)]"
+              className="inline-flex items-center gap-1 text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--accent)]"
               aria-expanded={solutionsOpen}
               onClick={() => setSolutionsOpen((v) => !v)}
             >
@@ -72,17 +72,17 @@ export function Header() {
                     className="rounded-xl p-3 transition hover:bg-[var(--bg-muted)]"
                     onClick={() => setSolutionsOpen(false)}
                   >
-                    <span className="block text-sm font-semibold">{item.label}</span>
+                    <span className="block text-sm font-medium">{item.label}</span>
                     <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{item.description}</span>
                   </Link>
                 ))}
               </div>
             </div>
           </div>
-          <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--blue)]" href="/vision-2036">
+          <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--accent)]" href="/vision-2036">
             Vision 2036
           </Link>
-          <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--blue)]" href="/partnerships">
+          <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--accent)]" href="/partnerships">
             Partnerships
           </Link>
         </nav>

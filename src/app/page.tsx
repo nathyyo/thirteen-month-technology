@@ -56,7 +56,7 @@ export default function HomePage() {
           <div className="stack-after grid gap-4 sm:gap-5 lg:grid-cols-3">
             {audiences.map((item, i) => (
               <Reveal key={item.href} delay={i * 90}>
-                <Link href={item.href} className="group glass block overflow-hidden rounded-[1.5rem]">
+                <Link href={item.href} className="group glass card-hover block overflow-hidden rounded-[1.5rem]">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <CoverImage
                       src={item.image}
@@ -64,8 +64,8 @@ export default function HomePage() {
                       sizes="(min-width: 1024px) 33vw, 100vw"
                       className="transition duration-700 group-hover:scale-[1.03]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070c] via-[#05070c]/20 to-transparent" />
-                    <p className="absolute bottom-4 left-5 text-[0.68rem] font-semibold tracking-[0.28em] text-white uppercase">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1614] via-[#1A1614]/20 to-transparent" />
+                    <p className="absolute bottom-4 left-5 text-[0.68rem] font-medium tracking-[0.28em] text-white uppercase">
                       {item.kicker}
                     </p>
                   </div>
@@ -90,9 +90,9 @@ export default function HomePage() {
         <ol className="stack-after grid list-none gap-3 sm:gap-4 md:grid-cols-5">
           {approach.map((item, i) => (
             <li key={item.step}>
-              <Reveal delay={i * 70} className="glass h-full rounded-2xl p-5">
-                <p className="font-display text-sm font-semibold tracking-[0.2em] text-[var(--blue)]">{item.step}</p>
-                <h3 className="mt-3 text-lg font-semibold">{item.title}</h3>
+              <Reveal delay={i * 70} className="glass card-hover h-full rounded-2xl p-5">
+                <p className="font-display text-sm font-semibold tracking-[0.2em] text-[var(--accent)]">{item.step}</p>
+                <h3 className="font-display mt-3 text-lg font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
               </Reveal>
             </li>
@@ -110,7 +110,7 @@ export default function HomePage() {
           </Reveal>
           <div className="stack-after grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((item, i) => (
-              <Reveal key={item.title} delay={i * 70} className="glass rounded-2xl p-6">
+              <Reveal key={item.title} delay={i * 70} className="glass card-hover rounded-2xl p-6">
                 <h3 className="font-display text-xl font-semibold">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
               </Reveal>

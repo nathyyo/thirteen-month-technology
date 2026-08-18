@@ -16,7 +16,7 @@ export default function NotFound() {
         </Button>
       </div>
       <p className="mt-8 text-sm">
-        <Link href="/solutions" className="text-[var(--blue)]">
+        <Link href="/solutions" className="text-[var(--accent)]">
           Explore solutions
         </Link>
       </p>

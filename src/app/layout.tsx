@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -10,22 +10,25 @@ import { site } from "@/content/site";
 import { absoluteUrl } from "@/lib/seo";
 import "./globals.css";
 
-const display = Plus_Jakarta_Sans({
+const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const body = Source_Sans_3({
+const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#eef2f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#05070c" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f1e7" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1614" },
   ],
   viewportFit: "cover",
 };

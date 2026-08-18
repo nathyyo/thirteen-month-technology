@@ -32,8 +32,8 @@ export default function AviationPage() {
           <p className="brand-kicker">Future Aviation Solutions</p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {aviation.solutions.map((item, i) => (
-              <Reveal key={item.title} delay={i * 60} className="glass rounded-[1.4rem] p-6">
-                <p className="text-[0.68rem] font-semibold tracking-[0.28em] text-[var(--blue)] uppercase">
+              <Reveal key={item.title} delay={i * 60} className="glass card-hover rounded-[1.4rem] p-6">
+                <p className="text-[0.68rem] font-medium tracking-[0.28em] text-[var(--accent)] uppercase">
                   Future solution
                 </p>
                 <h2 className="font-display mt-3 text-xl font-semibold">{item.title}</h2>

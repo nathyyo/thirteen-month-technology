@@ -20,7 +20,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block text-[0.8rem] leading-5 text-[var(--ink-soft)] hover:text-[var(--blue)] sm:text-sm"
+                    className="block text-[0.8rem] leading-5 text-[var(--ink-soft)] hover:text-[var(--accent)] sm:text-sm"
                   >
                     {link.label}
                   </Link>
@@ -37,7 +37,7 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             <span>Verify. Connect. Manage. Audit.</span>
-            <Link href="/privacy" className="hover:text-[var(--blue)]">
+            <Link href="/privacy" className="hover:text-[var(--accent)]">
               Privacy
             </Link>
           </div>
