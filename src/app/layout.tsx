@@ -8,6 +8,7 @@ import { Providers } from "@/components/providers";
 import { SkipLink } from "@/components/skip-link";
 import { site } from "@/content/site";
 import { absoluteUrl } from "@/lib/seo";
+import { resolvePublicUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const display = Fraunces({
@@ -34,7 +35,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(absoluteUrl("/")),
+  metadataBase: new URL(resolvePublicUrl()),
   title: {
     default: `${site.name} | Trusted Digital Infrastructure`,
     template: `%s | ${site.name}`,

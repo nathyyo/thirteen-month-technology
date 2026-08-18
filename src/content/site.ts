@@ -1,3 +1,5 @@
+import { resolvePublicUrl } from "@/lib/site-url";
+
 export const site = {
   name: "Thirteen Month Technology",
   shortName: "Thirteen Month",
@@ -14,7 +16,7 @@ export const site = {
     { label: "Aviation", href: "/aviation" },
     { label: "Cross-Border Verification", href: "/technology#cross-border" },
   ],
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: resolvePublicUrl(),
   locale: "en",
   contact: {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@thirteenmonth.technology",

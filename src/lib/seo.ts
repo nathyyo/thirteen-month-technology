@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { resolvePublicUrl } from "@/lib/site-url";
 
 export function absoluteUrl(path = "/") {
-  const base = site.url.replace(/\/$/, "");
+  const base = resolvePublicUrl();
   if (path === "/") return base;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
