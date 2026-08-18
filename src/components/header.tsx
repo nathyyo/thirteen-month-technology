@@ -36,7 +36,7 @@ export function Header() {
   return (
     <header className={cn("sticky top-0 z-50 isolate site-header", scrolled || open ? "shadow-[0_10px_40px_rgb(0_0_0/0.08)]" : "")}>
       <div className="container-site flex h-14 min-w-0 items-center justify-between gap-3">
-        <Wordmark compact />
+        <Wordmark />
 
         <nav className="hidden min-w-0 items-center gap-6 xl:flex" aria-label="Primary">
           <Link className="text-[0.9rem] font-medium text-[var(--ink-soft)] hover:text-[var(--accent)]" href="/about">

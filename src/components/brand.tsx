@@ -3,13 +3,7 @@ import Link from "next/link";
 import { LogoMark } from "@/components/logo-mark";
 import { cn } from "@/lib/cn";
 
-export function Wordmark({
-  compact = false,
-  className,
-}: {
-  compact?: boolean;
-  className?: string;
-}) {
+export function Wordmark({ className }: { className?: string }) {
   return (
     <Link
       href="/"
@@ -26,11 +20,9 @@ export function Wordmark({
           <span className="font-bold text-[color:var(--ink)]">13</span>
           <span className="font-normal text-[color:var(--ink)]"> Month</span>
         </span>
-        {!compact && (
-          <span className="mt-0.5 hidden text-[0.55rem] font-medium tracking-[0.32em] text-[color:var(--clay-bright)] sm:block">
-            TECHNOLOGY
-          </span>
-        )}
+        <span className="mt-0.5 hidden text-[0.55rem] font-medium tracking-[0.32em] text-[color:var(--clay-bright)] sm:block">
+          TECHNOLOGY
+        </span>
       </span>
     </Link>
   );

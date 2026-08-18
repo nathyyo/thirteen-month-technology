@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-[var(--line)]">
       <div className="container-site grid grid-cols-3 gap-x-3 gap-y-5 py-5 sm:gap-6 sm:py-8 lg:grid-cols-[1.35fr_repeat(3,minmax(0,1fr))] lg:py-10">
         <div className="col-span-3 lg:col-span-1">
-          <Wordmark compact />
+          <Wordmark />
           <p className="mt-2 max-w-sm text-[0.8rem] leading-5 text-[var(--muted)] sm:mt-3 sm:text-sm sm:leading-6">
             {site.tagline}
           </p>
