@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@/components/analytics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </Providers>
         <JsonLd />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
