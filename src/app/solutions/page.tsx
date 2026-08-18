@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { audiences, financial, technology } from "@/content/site";
+import { AutomotiveGraphic } from "@/components/automotive-graphic";
 import { CoverImage } from "@/components/brand";
 import { CtaBand, PageHero } from "@/components/page-hero";
 import { Pillars } from "@/components/pillars";
@@ -18,7 +19,7 @@ export default function SolutionsPage() {
     <>
       <PageHero
         eyebrow="Solutions"
-        title="Secure platforms for financial, government, and aviation institutions."
+        title="Secure platforms for financial, government, aviation, and automotive institutions."
         description="Thirteen Month Technology develops digital infrastructure that strengthens verification, connection, management, and audit across complex institutional workflows."
       />
 
@@ -27,12 +28,16 @@ export default function SolutionsPage() {
       </section>
 
       <section className="border-y border-[var(--line)] section-y">
-        <div className="container-site grid gap-6 lg:grid-cols-3">
+        <div className="container-site grid gap-6 sm:grid-cols-2">
           {audiences.map((item, i) => (
             <Reveal key={item.href} delay={i * 80}>
                 <Link href={item.href} className="group glass card-hover block overflow-hidden rounded-[1.5rem]">
                   <div className="relative aspect-[16/10]">
-                    <CoverImage src={item.image} alt={item.imageAlt} sizes="(min-width:1024px) 33vw, 100vw" />
+                    {item.image ? (
+                      <CoverImage src={item.image} alt={item.imageAlt} sizes="(min-width:1024px) 33vw, 100vw" />
+                    ) : (
+                      <AutomotiveGraphic />
+                    )}
                   <div className="absolute inset-0 bg-[#1A1614]/25" />
                 </div>
                 <div className="p-6">

@@ -8,6 +8,7 @@ const paths = [
   "/financial-services",
   "/government",
   "/aviation",
+  "/automotive",
   "/technology",
   "/vision-2036",
   "/partnerships",

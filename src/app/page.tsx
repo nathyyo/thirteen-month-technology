@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { AccentDivider } from "@/components/accent-divider";
+import { AutomotiveGraphic } from "@/components/automotive-graphic";
 import { CoverImage } from "@/components/brand";
 import { HomeHero } from "@/components/home-hero";
 import { CtaBand } from "@/components/page-hero";
 import { Pillars } from "@/components/pillars";
 import { Reveal } from "@/components/reveal";
+import { approachIcons, reasonIcons } from "@/components/section-icons";
 import { approach, audiences, reasons, site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
@@ -27,6 +30,7 @@ export default function HomePage() {
 
       <section className="cv-auto container-site section-y">
         <Reveal className="mx-auto max-w-3xl text-center">
+          <AccentDivider className="mx-auto mb-4" />
           <p className="brand-kicker">Trust statement</p>
           <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
             Trust is the foundation of digital transformation.
@@ -53,17 +57,21 @@ export default function HomePage() {
               Technology for Institutions That Matter
             </h2>
           </Reveal>
-          <div className="stack-after grid gap-4 sm:gap-5 lg:grid-cols-3">
+          <div className="stack-after grid gap-4 sm:grid-cols-2 sm:gap-5">
             {audiences.map((item, i) => (
               <Reveal key={item.href} delay={i * 90}>
                 <Link href={item.href} className="group glass card-hover block overflow-hidden rounded-[1.5rem]">
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <CoverImage
-                      src={item.image}
-                      alt={item.imageAlt}
-                      sizes="(min-width: 1024px) 33vw, 100vw"
-                      className="transition duration-700 group-hover:scale-[1.03]"
-                    />
+                    {item.image ? (
+                      <CoverImage
+                        src={item.image}
+                        alt={item.imageAlt}
+                        sizes="(min-width: 1024px) 33vw, 100vw"
+                        className="transition duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <AutomotiveGraphic className="transition duration-700 group-hover:scale-[1.03]" />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A1614] via-[#1A1614]/20 to-transparent" />
                     <p className="absolute bottom-4 left-5 text-[0.68rem] font-medium tracking-[0.28em] text-white uppercase">
                       {item.kicker}
@@ -88,15 +96,21 @@ export default function HomePage() {
           </h2>
         </Reveal>
         <ol className="stack-after grid list-none gap-3 sm:gap-4 md:grid-cols-5">
-          {approach.map((item, i) => (
-            <li key={item.step}>
-              <Reveal delay={i * 70} className="glass card-hover h-full rounded-2xl p-5">
-                <p className="font-display text-sm font-semibold tracking-[0.2em] text-[var(--accent)]">{item.step}</p>
-                <h3 className="font-display mt-3 text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
-              </Reveal>
-            </li>
-          ))}
+          {approach.map((item, i) => {
+            const Icon = approachIcons[item.title];
+            return (
+              <li key={item.step}>
+                <Reveal delay={i * 70} className="glass card-hover h-full rounded-2xl p-5">
+                  {Icon ? <Icon className="text-[var(--accent)]" /> : null}
+                  <p className="font-display mt-3 text-sm font-semibold tracking-[0.2em] text-[var(--accent)]">
+                    {item.step}
+                  </p>
+                  <h3 className="font-display mt-2 text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
+                </Reveal>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
@@ -109,12 +123,16 @@ export default function HomePage() {
             </h2>
           </Reveal>
           <div className="stack-after grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {reasons.map((item, i) => (
-              <Reveal key={item.title} delay={i * 70} className="glass card-hover rounded-2xl p-6">
-                <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
-              </Reveal>
-            ))}
+            {reasons.map((item, i) => {
+              const Icon = reasonIcons[item.title];
+              return (
+                <Reveal key={item.title} delay={i * 70} className="glass card-hover rounded-2xl p-6">
+                  {Icon ? <Icon className="text-[var(--accent)]" /> : null}
+                  <h3 className="font-display mt-3 text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

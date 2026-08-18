@@ -1,6 +1,7 @@
 import { crossBorder, technology } from "@/content/site";
 import { CtaBand, PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { crossBorderIcons, technologyIcons } from "@/components/section-icons";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -22,12 +23,16 @@ export default function TechnologyPage() {
       <section className="container-site section-y">
         <p className="brand-kicker">Core capabilities</p>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-          {technology.capabilities.map((item, i) => (
-            <Reveal key={item.title} delay={i * 60} className="glass card-hover rounded-2xl p-5">
-              <h2 className="font-display text-lg font-semibold">{item.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
-            </Reveal>
-          ))}
+          {technology.capabilities.map((item, i) => {
+            const Icon = technologyIcons[item.title];
+            return (
+              <Reveal key={item.title} delay={i * 60} className="glass card-hover rounded-2xl p-5">
+                {Icon ? <Icon className="text-[var(--accent)]" /> : null}
+                <h2 className="font-display mt-3 text-lg font-semibold">{item.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
+              </Reveal>
+            );
+          })}
         </div>
         <Reveal className="stack-after">
           <p className="font-display text-2xl font-semibold tracking-tight">{technology.closing}</p>
@@ -43,12 +48,20 @@ export default function TechnologyPage() {
             <p className="mt-4 text-base leading-7 text-[var(--muted)] sm:text-lg sm:leading-8">{crossBorder.body}</p>
           </Reveal>
           <div className="stack-after grid gap-4 md:grid-cols-3">
-            {crossBorder.pillars.map((item, i) => (
-              <Reveal key={item.title} delay={i * 70} className="rounded-2xl border border-[var(--line)] p-6">
-                <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-[var(--muted)]">{item.text}</p>
-              </Reveal>
-            ))}
+            {crossBorder.pillars.map((item, i) => {
+              const Icon = crossBorderIcons[item.title];
+              return (
+                <Reveal
+                  key={item.title}
+                  delay={i * 70}
+                  className="card-hover rounded-2xl border border-[var(--line)] p-6"
+                >
+                  {Icon ? <Icon className="text-[var(--accent)]" /> : null}
+                  <h3 className="font-display mt-3 text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-[var(--muted)]">{item.text}</p>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

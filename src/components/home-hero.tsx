@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AccentDivider } from "@/components/accent-divider";
 import { Button } from "@/components/button";
 import { HeroStage } from "@/components/hero-stage";
 import { site } from "@/content/site";
@@ -8,6 +9,7 @@ export function HomeHero() {
     <section className="relative isolate overflow-hidden" aria-labelledby="home-hero-heading">
       <div className="container-site relative grid items-center gap-5 py-6 sm:gap-8 sm:py-10 lg:min-h-[calc(100svh-3.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 lg:py-6">
         <div className="text-center lg:text-left">
+          <AccentDivider eager className="mx-auto mb-4 lg:mx-0" />
           <p className="brand-kicker">Digital Trusted Infrastructure</p>
           <h1
             id="home-hero-heading"

@@ -1,6 +1,7 @@
 import { approach, images, reasons, site } from "@/content/site";
 import { CtaBand, MediaBand, PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { approachIcons, reasonIcons } from "@/components/section-icons";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -50,15 +51,24 @@ export default function AboutPage() {
             </h2>
           </Reveal>
           <ol className="stack-after list-none space-y-3 sm:space-y-4">
-            {approach.map((item, i) => (
-              <li key={item.step}>
-                <Reveal delay={i * 50} className="glass card-hover grid gap-3 rounded-2xl p-6 md:grid-cols-[7rem_12rem_1fr] md:items-center">
-                <span className="font-display text-sm tracking-[0.22em] text-[var(--accent)]">{item.step}</span>
-                <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-                <p className="text-[var(--muted)]">{item.text}</p>
-                </Reveal>
-              </li>
-            ))}
+            {approach.map((item, i) => {
+              const Icon = approachIcons[item.title];
+              return (
+                <li key={item.step}>
+                  <Reveal
+                    delay={i * 50}
+                    className="glass card-hover grid gap-3 rounded-2xl p-6 md:grid-cols-[7rem_12rem_1fr] md:items-center"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      {Icon ? <Icon className="h-7 w-7 shrink-0 text-[var(--accent)]" /> : null}
+                      <span className="font-display text-sm tracking-[0.22em] text-[var(--accent)]">{item.step}</span>
+                    </div>
+                    <h3 className="font-display text-xl font-semibold">{item.title}</h3>
+                    <p className="text-[var(--muted)]">{item.text}</p>
+                  </Reveal>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>
@@ -71,12 +81,16 @@ export default function AboutPage() {
           </h2>
         </Reveal>
         <div className="stack-after grid gap-4 sm:grid-cols-2">
-          {reasons.map((item) => (
-            <Reveal key={item.title} className="glass card-hover rounded-2xl p-6">
-              <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-              <p className="mt-3 text-[var(--muted)]">{item.text}</p>
-            </Reveal>
-          ))}
+          {reasons.map((item, i) => {
+            const Icon = reasonIcons[item.title];
+            return (
+              <Reveal key={item.title} delay={i * 60} className="glass card-hover rounded-2xl p-6">
+                {Icon ? <Icon className="text-[var(--accent)]" /> : null}
+                <h3 className="font-display mt-3 text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-[var(--muted)]">{item.text}</p>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 

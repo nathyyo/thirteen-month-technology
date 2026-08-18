@@ -9,11 +9,12 @@ export const site = {
   summary:
     "Thirteen Month Technology develops secure digital platforms that enable financial institutions, governments, aviation organizations, and enterprises to verify, connect, and manage critical digital workflows with confidence.",
   heroLede:
-    "Secure platforms for finance, government, aviation, and cross-border verification.",
+    "Secure platforms for finance, government, aviation, automotive, and cross-border verification.",
   sectors: [
     { label: "Financial Services", href: "/financial-services" },
     { label: "Government", href: "/government" },
     { label: "Aviation", href: "/aviation" },
+    { label: "Automotive", href: "/automotive" },
     { label: "Cross-Border Verification", href: "/technology#cross-border" },
   ],
   url: resolvePublicUrl(),
@@ -50,6 +51,11 @@ export const site = {
           description: "Future solutions for trusted aviation workflows.",
         },
         {
+          label: "Automotive",
+          href: "/automotive",
+          description: "Vehicle inspection, maintenance, and fleet infrastructure.",
+        },
+        {
           label: "Technology",
           href: "/technology",
           description: "Reusable capabilities for identity, documents, and data.",
@@ -78,6 +84,7 @@ export const site = {
         { label: "Financial Services", href: "/financial-services" },
         { label: "Government", href: "/government" },
         { label: "Aviation", href: "/aviation" },
+        { label: "Automotive", href: "/automotive" },
         { label: "Technology", href: "/technology" },
       ],
     },
@@ -88,6 +95,7 @@ export const site = {
         { label: "Cross-Border Verification", href: "/technology#cross-border" },
         { label: "Digital Public Services", href: "/government" },
         { label: "Future Aviation Solutions", href: "/aviation" },
+        { label: "Smart Automotive Infrastructure", href: "/automotive" },
       ],
     },
   ],
@@ -140,6 +148,14 @@ export const audiences = [
     text: "Building the foundation for secure passenger, cargo, supplier, procurement, maintenance, and verification solutions across the aviation ecosystem.",
     image: "/images/aviation.jpg",
     imageAlt: "Commercial aircraft in flight above cloud cover",
+  },
+  {
+    href: "/automotive",
+    kicker: "Automotive",
+    title: "Smart Automotive Infrastructure",
+    text: "Digital infrastructure for vehicle inspection, maintenance, repair, and fleet operations across the vehicle lifecycle.",
+    image: null,
+    imageAlt: "",
   },
 ] as const;
 
@@ -253,6 +269,35 @@ export const aviation = {
   closing: "From trusted travelers to trusted aircraft.",
 } as const;
 
+export const automotive = {
+  title: "Smart Automotive Infrastructure",
+  lede: "Technology and digital infrastructure for vehicle inspection, maintenance, repair, and fleet operations.",
+  body: "Thirteen Month Technology is developing solutions that help automotive businesses, fleets, insurers, and institutions improve vehicle lifecycle management, maintenance, quality control, and service documentation.",
+  focus: [
+    "Vehicle Inspection & Diagnostics",
+    "Maintenance & Repair Management",
+    "Fleet Operations",
+    "Vehicle Lifecycle Records",
+    "Parts & Service Traceability",
+    "Body & Paint Services",
+    "EV Service & Battery Diagnostics",
+    "Quality & Compliance",
+    "Digital Service Documentation",
+  ],
+  approachFlow: ["Inspect", "Maintain", "Repair", "Verify", "Record"],
+  approachText:
+    "We connect physical automotive services with secure digital records, helping organizations improve transparency, efficiency, accountability, and vehicle lifecycle management.",
+  future: [
+    "Passenger Vehicles",
+    "Commercial Fleets",
+    "Government Vehicles",
+    "Insurance",
+    "Electric Vehicles",
+    "Automotive Service Networks",
+  ],
+  closing: "From inspection to record. Built for the full vehicle lifecycle.",
+} as const;
+
 export const technology = {
   title: "One Technology Foundation. Multiple Applications.",
   lede: "Our approach is built around reusable digital capabilities that can be adapted to complex institutional environments.",
@@ -349,6 +394,7 @@ export const inquiryTypes = [
   { value: "financial", label: "Financial services" },
   { value: "government", label: "Government" },
   { value: "aviation", label: "Aviation" },
+  { value: "automotive", label: "Automotive" },
   { value: "partnership", label: "Partnership" },
   { value: "technology", label: "Technology partnership" },
 ] as const;

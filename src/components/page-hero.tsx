@@ -1,3 +1,4 @@
+import { AccentDivider } from "@/components/accent-divider";
 import { CoverImage } from "@/components/brand";
 import { Button } from "@/components/button";
 import { cn } from "@/lib/cn";
@@ -20,6 +21,7 @@ export function PageHero({
       <NumeralWatermark className="-right-[4%] -top-[18%] text-[clamp(9rem,20vw,15rem)]" />
       <div className="container-site relative py-8 text-center sm:py-12 lg:py-16">
         <Reveal>
+          <AccentDivider className="mx-auto mb-4" />
           {eyebrow ? <p className="brand-kicker">{eyebrow}</p> : null}
           {kicker ? (
             <p className={cn("mt-4 text-sm font-medium text-[var(--muted)]", !eyebrow && "brand-kicker mt-0")}>

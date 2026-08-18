@@ -20,7 +20,7 @@ export function Wordmark({ className }: { className?: string }) {
           <span className="font-bold text-[color:var(--ink)]">13</span>
           <span className="font-normal text-[color:var(--ink)]"> Month</span>
         </span>
-        <span className="mt-0.5 hidden text-[0.55rem] font-medium tracking-[0.32em] text-[color:var(--clay-bright)] sm:block">
+        <span className="mt-0.5 block truncate text-[0.55rem] font-medium tracking-[0.32em] text-[color:var(--clay-bright)]">
           TECHNOLOGY
         </span>
       </span>

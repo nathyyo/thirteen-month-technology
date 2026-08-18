@@ -121,6 +121,7 @@ export function Header() {
               { href: "/financial-services", label: "Financial Services" },
               { href: "/government", label: "Government" },
               { href: "/aviation", label: "Aviation" },
+              { href: "/automotive", label: "Automotive" },
               { href: "/technology", label: "Technology" },
               { href: "/vision-2036", label: "Vision 2036" },
               { href: "/partnerships", label: "Partnerships" },
